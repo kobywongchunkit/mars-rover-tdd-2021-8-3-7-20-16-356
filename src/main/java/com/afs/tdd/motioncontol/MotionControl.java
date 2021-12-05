@@ -8,20 +8,7 @@ public class MotionControl {
     public MotionControl(int x, int y, String dir) {
         location_x = x;
         location_y = y;
-        switch (dir){
-            case "N":
-                direction = Direction.North;
-                break;
-            case "E":
-                direction = Direction.East;
-                break;
-            case "S":
-                direction = Direction.South;
-                break;
-            case "W":
-                direction = Direction.West;
-                break;
-        }
+        direction = Direction.getDirectionFromAbbv(dir.charAt(0));
     }
 
     public void moveForward() {
@@ -51,6 +38,6 @@ public class MotionControl {
 
     @Override
     public String toString() {
-        return String.format("%d %d %c",location_x,location_y,direction.toString().charAt(0));
+        return String.format("%d %d %c",location_x,location_y,direction.getAbbv());
     }
 }
