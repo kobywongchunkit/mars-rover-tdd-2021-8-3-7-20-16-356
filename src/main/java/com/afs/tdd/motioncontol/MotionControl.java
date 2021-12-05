@@ -5,10 +5,10 @@ public class MotionControl {
     private int location_x = 0;
     private int location_y = 0;
 
-    public MotionControl(int x, int y, String dir) {
+    public MotionControl(int x, int y, String direction) {
         location_x = x;
         location_y = y;
-        direction = Direction.getDirectionFromAbbv(dir.charAt(0));
+        this.direction = Direction.getDirectionFromAbbv(direction.charAt(0));
     }
 
     public void moveForward() {
